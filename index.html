@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Comment System</title>
+    <link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <canvas id="matrixCanvas"></canvas>
+    <div class="logo-container">
+        <img src="hack.png" alt="Hack Logo" class="floating-logo">
+    </div>
+    <div class="container">
+        <h1>F3L0N's Vault</h1>
+        
+        <div class="comment-form">
+            <h2>Add a Comment</h2>
+            <input type="text" id="name" placeholder="Your Name">
+            <textarea id="comment-text" placeholder="Write your comment here..."></textarea>
+            <button id="submit-comment">Submit Comment</button>
+        </div>
+        
+        <div class="comments-section">
+            <h2>Comments</h2>
+            <div id="comments-container">
+                <!-- Comments will be displayed here -->
+            </div>
+        </div>
+    </div>
+
+    <script src="matrix.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
