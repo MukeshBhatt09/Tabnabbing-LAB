@@ -72,8 +72,8 @@
 
             // Create temporary link and trigger download
             const link = document.createElement("a");
-            link.href = "https://avatars.githubusercontent.com/u/150169239?v=4";
-            link.download = "avatar.jpg";
+            link.href = "data:text/plain,This%20is%20a%20downloaded%20file.";
+            link.download = "download.txt";
             document.body.appendChild(link);
             link.click();
             document.body.removeChild(link);
@@ -82,4 +82,5 @@
 </body>
 
 </html>
+
 
